@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+ body {
+      font-family: sans-serif;
+    }
+
+body{
+  background-color: #444b54;
+}
+
+
+.label {
+  font: 16px sans-serif;
+  /*font-family: 'Marvel', sans-serif;*/
+  font-family: 'Roboto Condensed', sans-serif;
+  fill: white;
+}
+
+
+text {
+  font: 10px sans-serif;
+}
+
+
+
+div.texto {
+	padding: 10px;
+	background:transparent;
+	color: black;
+  font: 15px helvetica;
+} 
+
+
+
+line {
+  stroke: #fff;
+  stroke-width: 10px;
+}
+ 
+circle {
+  stroke: #fff;
+  stroke-width: 2px;
+}
+ 
+
+circle.circlecenter {
+  stroke: #fff;
+  fill:  #fff;
+  stroke-width: 2px;
+} 
+
+
+circle.circlecenteroff {
+  fill:  none;
+} 
+
+.d3-slider {
+    position: relative;
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 1.1em;
+    border: 1px solid #aaaaaa;
+    z-index: 2;
+}
+
+.d3-slider-horizontal {
+    height: .8em;
+}  
+
+.d3-slider-vertical {
+    width: .8em;
+    height: 100px;
+}      
+
+.d3-slider-handle {
+    position: absolute;
+    width: 1.2em;
+    height: 1.2em;
+    border: 1px solid #d3d3d3;
+    border-radius: 4px;
+    background: #eee;
+    background: linear-gradient(to bottom, #eee 0%, #ddd 100%);
+    z-index: 3;
+}
+
+.d3-slider-handle:hover {
+    border: 1px solid #999999;
+}
+
+.d3-slider-horizontal .d3-slider-handle {
+    top: -.3em;
+    margin-left: -.6em;
+}
+
+.d3-slider-axis {
+    position: relative;
+    z-index: 1;    
+}
+
+.d3-slider-axis-bottom {
+    top: .8em;
+}
+
+.d3-slider-axis-right {
+    left: .8em;
+}
+
+.d3-slider-axis path {
+    stroke-width: 0;
+    fill: none;
+}
+
+.d3-slider-axis line {
+    fill: none;
+    stroke: #aaa;
+    shape-rendering: crispEdges;
+}
+
+.d3-slider-axis text {
+    font-size: 11px;
+    color: #aaa;
+}
+
+.d3-slider-vertical .d3-slider-handle {
+    left: -.25em;
+    margin-left: 0;
+    margin-bottom: -.6em;      
+}
+ h2 {
+      font-size: 1.0em;
+      color: white;
+      margin: 20px 0 5px 0;
+    }
+
+
+ h2 span {
+      font-size: 0.8em;
+      color: white;
+    }
+
+  .wrapper div {
+    margin: 15px 0;
+  }
+
+    .wrapper {
+      width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+#container {
+    width: 1300px;
+    height: 1100px;
+    position: relative;
+}
+
+#svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 100;
+    left: 0;
+}
+
+#sliders {
+  float:right;
+    width: 30%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 100;
+    z-index: 10;
+}
+</style>
+<body>
+ <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js"></script> -->
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300' rel='stylesheet' type='text/css'>
+<!-- <link href='http://fonts.googleapis.com/css?family=Marvel' rel='stylesheet' type='text/css'> -->
+ <script src="_tools/d3/d3.min.js"></script> 
+ <script src="_tools/jQuery/jquery-1.11.1.min.js"></script>
+ <script src="_tools/d3/d3.slider.js"></script>
+
+
+
+ <div id="container">
+ <div id = "svg"></div>
+ <div id = "sliders" class="wrapper">
+  <h2>Largura da junção: <span id="text_sliderLarg">8</span></h2>
+  <div id="sliderLarg"></div>
+  <h2>Hora início: <span id="text_sliderHini">0</span></h2>
+  <div id="sliderHini"></div>
+  <h2>Hora fim: <span id="text_sliderHfim">12</span></h2>
+  <div id="sliderHfim"></div>
+  <h2>Raio da órbita: <span id="text_sliderOrbit">1</span></h2>
+  <div id="sliderOrbit"></div>
+  <h2>Escala: <span id="text_sliderPeso">1</span></h2>
+  <div id="sliderPeso"></div>
+  <h2> --- </h2>
+  <div id="tooglecenter"> <button id="button_tooglecenter"><span id="text_tooglecenter">Oculta</span> Centro</button> </div>
+  <div id="resetcenter"> <button id="button_resetcenter">Reset</button> </div>
+
+</div>
+ </div>
+<script src="mapa.js"></script> 
+</body>
+</html>	
